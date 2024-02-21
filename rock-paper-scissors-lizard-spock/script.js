@@ -18,14 +18,17 @@ function playRound(playerSelection, computerSelection) {
     const playerLowerCase = playerSelection.toLowerCase();
     const computerLowerCase = computerSelection.toLowerCase();
     
-    if (playerLowerCase === computerLowerCase) {
+    if (!weaponChoices.includes(playerLowerCase)) {
+        return `${playerLowerCase} is not a valid weapon. Please pick a valid weapon.`
+    }
+    else if (playerLowerCase === computerLowerCase) {
         return `Tie!`;
     // The '?' chaining operator ensures that if key doesn't exist in the 'winConditions',
     // it won't throw an error
     } else if (winConditions[playerLowerCase]?.includes(computerLowerCase)) {
-        return `You Win! ${playerLowerCase} beats ${computerLowerCase}`
+        return `You Win! ${playerLowerCase} beats ${computerLowerCase}.`
     } else {
-        return `You Lose. ${computerLowerCase} beats ${playerLowerCase}`
+        return `You Lose. ${computerLowerCase} beats ${playerLowerCase}.`
     }
 }
 
