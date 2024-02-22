@@ -8,13 +8,10 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+/* Header */
 .header {
-    background-color: #1F2937;
-}
-
-.logo {
-    font-size: 24px;
-    color: #F9FAF8;
+    padding: 30px;
+    background-color: rgb(45, 133, 124);
 }
 
 .header nav {
@@ -23,17 +20,73 @@ body {
     align-items: center;
 }
 
+.header .logo-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .logo-container i,
+.header .logo-container h2 {
+    color: #F9FAF8;
+}
+
+.header .logo-container i {
+    margin-right: 10px;
+    font-size: 30px;
+}
 
 .header nav ul {
     list-style-type: none;
-    display: flex;
-    justify-content: space-between;
-
 }
 
-nav ul li a {
+.header nav ul a {
     text-decoration: none;
-    color: #E5E7EB;
-    font-size: 18px;
-    margin-right: 20px;
+}
+
+nav .left-navlinks {
+    display: flex;
+}
+
+nav .left-navlinks li {
+    margin-left: 100px;
+}
+
+
+nav .left-navlinks a {
+    color: #F9FAF8;
+    font-weight: bold;
+}
+
+nav .right-navlinks {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .right-navlinks li {
+    margin-right: 25px;
+}
+
+nav .right-navlinks li a {
+    text-decoration: none;
+    color: #F9FAF8;
+    font-weight: bold;
+    border: 2px solid #F9FAF8;
+    border-radius: 10px;
+    padding: 15px 45px;
+}
+
+
+nav .right-navlinks button a {
+    text-decoration: none;
+    color: rgb(45, 133, 124);
+    font-weight: bold;
+}
+
+nav .right-navlinks button {
+    background-color: #F9FAF8;
+    border: 2px solid #F9FAF8;
+    border-radius: 10px;
+    padding: 15px 45px;
 }

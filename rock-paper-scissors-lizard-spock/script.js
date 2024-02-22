@@ -11,7 +11,7 @@ function getPlayerChoice() {
     
     buttons.forEach((button) => {
         button.addEventListener('click', () => {
-            return button.id;
+            console.log(button.id);
         });
     });
 }
@@ -41,14 +41,14 @@ function playRound(playerSelection, computerSelection) {
 }
 
 
-// function playGame() {
+function playGame() {
 
-//     const playerSelection = getPlayerChoice();
-//     const computerSelection = getComputerChoice();
-//     console.log(playRound(playerSelection, computerSelection));
+    const playerSelection = getPlayerChoice();
+    const computerSelection = getComputerChoice();
+    console.log(playRound(playerSelection, computerSelection));
 
-// }
+}
 
-// getPlayerChoice();
+getPlayerChoice();
 
-playGame();
+// playGame();
