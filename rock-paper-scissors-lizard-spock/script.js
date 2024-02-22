@@ -6,6 +6,12 @@ function getComputerChoice() {
 }
 
 
+function getPlayerInput() {
+    const playerInput = prompt("Select weapon [rock, paper, scissors, lizard, spock]: ");
+    return playerInput.toLowerCase();
+}
+
+
 function playRound(playerSelection, computerSelection) {
     const winConditions = {
         "rock": ["scissors", "lizard"],
@@ -14,25 +20,30 @@ function playRound(playerSelection, computerSelection) {
         "lizard": ["spock", "paper"],
         "spock": ["scissors", "rock"]
     };
-
-    const playerLowerCase = playerSelection.toLowerCase();
-    const computerLowerCase = computerSelection.toLowerCase();
     
-    if (!weaponChoices.includes(playerLowerCase)) {
-        return `${playerLowerCase} is not a valid weapon. Please pick a valid weapon.`
+    if (!weaponChoices.includes(playerSelection)) {
+        return `${playerSelection} is not a valid weapon. Please pick a valid weapon.`
     }
-    else if (playerLowerCase === computerLowerCase) {
+    else if (playerSelection === computerSelection) {
         return `Tie!`;
     // The '?' chaining operator ensures that if key doesn't exist in the 'winConditions',
     // it won't throw an error
-    } else if (winConditions[playerLowerCase]?.includes(computerLowerCase)) {
-        return `You Win! ${playerLowerCase} beats ${computerLowerCase}.`
+    } else if (winConditions[playerSelection]?.includes(computerSelection)) {
+        return `You Win! ${playerSelection} beats ${computerSelection}.`
     } else {
-        return `You Lose. ${computerLowerCase} beats ${playerLowerCase}.`
+        return `You Lose. ${computerSelection} beats ${playerSelection}.`
     }
 }
 
 
-const playerSelection = "rock";
-const computerSelection = "rock"
-console.log(playRound(playerSelection, computerSelection))
+function playGame() {
+    for (i = 0; i < 5; i++) {
+        const playerSelection = getPlayerInput();
+        const computerSelection = getComputerChoice();
+        console.log(playRound(playerSelection, computerSelection));
+    }
+}
+
+
+
+playGame();
