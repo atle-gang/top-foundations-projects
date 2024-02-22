@@ -6,9 +6,14 @@ function getComputerChoice() {
 }
 
 
-function getPlayerInput() {
-    const playerInput = prompt("Select weapon [rock, paper, scissors, lizard, spock]: ");
-    return playerInput.toLowerCase();
+function getPlayerChoice() {
+    const buttons = document.querySelectorAll('button');
+    
+    buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+            return button.id;
+        });
+    });
 }
 
 
@@ -36,14 +41,14 @@ function playRound(playerSelection, computerSelection) {
 }
 
 
-function playGame() {
+// function playGame() {
 
-    const playerSelection = getPlayerInput();
-    const computerSelection = getComputerChoice();
-    console.log(playRound(playerSelection, computerSelection));
+//     const playerSelection = getPlayerChoice();
+//     const computerSelection = getComputerChoice();
+//     console.log(playRound(playerSelection, computerSelection));
 
-}
+// }
 
+// getPlayerChoice();
 
-
-// playGame();
+playGame();
